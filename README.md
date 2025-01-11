@@ -1,8 +1,10 @@
 # Backend project for Myga
 
 ## Requirement
-[PostgreSQL 17](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) (Required)
-[pgAdmin4](https://www.pgadmin.org/download/pgadmin-4-windows/) (Optional)
+* [PostgreSQL 17](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) (Required)
+* [pgAdmin4](https://www.pgadmin.org/download/pgadmin-4-windows/) (Optional)
+* [NodeJS](https://nodejs.org/en) (Required)
+***
 ## How to use
 1. Intall all depedencies in terminal
    ```bash
