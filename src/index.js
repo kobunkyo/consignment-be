@@ -16,6 +16,9 @@ const cartRoute = require("./router/cart.js");
 app.use("/products", productsRoute);
 app.use("/cart", cartRoute);
 app.use("/user", userRoute);
+app.get("/", (req, res) => {
+  res.send("API is Running");
+});
 
 app.listen(PORT, () => {
   console.log("Running in PORT: " + PORT);
