@@ -8,16 +8,16 @@ const newUser = async (userData) => {
 
 const constrainValidation = async (userData) => {
   var validationMsg = {
-    name: "",
-    username: "",
-    email: "",
-    password: "",
+    id: "null",
+    name: "null",
+    username: "null",
+    email: "null",
+    password: "null",
   };
 
   const usernameRegex = /^[A-za-z0-9_\.]*$/;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordRegex =
-    /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).*$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).*$/;
 
   const isUsername = await searchUsername(userData.username);
 

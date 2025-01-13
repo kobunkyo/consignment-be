@@ -9,7 +9,13 @@ const createUser = async (userData) => {
       password: userData.password,
     },
   });
-  return user;
+  const userReturn = {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    username: user.username,
+  };
+  return userReturn;
 };
 
 const searchUsername = async (username) => {

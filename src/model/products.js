@@ -53,9 +53,22 @@ const updateQuantity = async (id, quantity) => {
   }
 };
 
+const getProductCategory = async (category) => {
+  const product = await prisma.product.findMany({
+    where: {
+      category: {
+        equals: category,
+        mode: "insensitive",
+      },
+    },
+  });
+  return product;
+};
+
 module.exports = {
   findProducts,
   findProductById,
   findProductByString,
   updateQuantity,
+  getProductCategory,
 };

@@ -3,6 +3,7 @@ const {
   findProductById,
   findProductByString,
   updateQuantity,
+  getProductCategory,
 } = require("../model/products.js");
 
 const getAllProducts = async () => {
@@ -38,9 +39,15 @@ const substractQuantity = async (id, quantity) => {
   return product;
 };
 
+const getProductByCategory = async (category) => {
+  const product = await getProductCategory(category);
+  return product;
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   getProductByKeyword,
   substractQuantity,
+  getProductByCategory,
 };

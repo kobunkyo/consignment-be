@@ -5,6 +5,7 @@ const {
   getProductById,
   getProductByKeyword,
   substractQuantity,
+  getProductByCategory,
 } = require("../controller/products.js");
 
 const router = express.Router();
@@ -45,6 +46,16 @@ router.patch("/sub/:id/qty/:quantity", async (req, res) => {
       data: product,
       message: "Success",
     });
+  } catch (error) {
+    res.send(error.message);
+  }
+});
+
+router.get("/category/:category", async (req, res) => {
+  try {
+    const category = req.params.category;
+    const product = await getProductByCategory(category);
+    res.send(product);
   } catch (error) {
     res.send(error.message);
   }

@@ -13,23 +13,20 @@ router.post("/signup", async (req, res) => {
     const userData = req.body;
 
     const validation = await constrainValidation(userData);
-
-    if (
-      validation.name == "" &&
-      validation.username == "" &&
-      validation.email == "" &&
-      validation.password == ""
-    ) {
-      const user = await newUser(userData);
-      res.send({
-        data: user,
-        message: "Berhasil",
-      });
-    } else {
-      res.send(validation);
-    }
+    // Not used
+    // if (
+    //   validation.name == "" &&
+    //   validation.username == "" &&
+    //   validation.email == "" &&
+    //   validation.password == ""
+    // ) {
+    // } else {
+    //   res.status(400).send(validation);
+    // }
+    const user = await newUser(userData);
+    res.status(201).send(user);
   } catch (error) {
-    res.send(error.message);
+    res.status(400).send(error.message);
   }
 });
 
